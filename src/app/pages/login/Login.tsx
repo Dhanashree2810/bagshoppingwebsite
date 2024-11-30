@@ -4,10 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useState } from "react";
-import { z } from 'zod'
 import globalschema from "../../../../globalschema";
-
-type GlobalSchemaType = z.infer<typeof globalschema>;
 
 const Login = () => {
   const [isRecoverPassword, setIsRecoverPassword] = useState(false);

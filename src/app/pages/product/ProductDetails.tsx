@@ -111,13 +111,13 @@ const ProductDetails = () => {
         setZoom(false);
     };
 
-    const handleMouseMove = (e: any) => {
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         const { offsetX, offsetY, target } = e.nativeEvent;
-        const { width, height } = target;
-
+        const rect = (target as HTMLDivElement).getBoundingClientRect();
+    
         setCursorPosition({
-            x: offsetX / width * 100,
-            y: offsetY / height * 100,
+            x: (offsetX / rect.width) * 100,
+            y: (offsetY / rect.height) * 100,
         });
     };
 

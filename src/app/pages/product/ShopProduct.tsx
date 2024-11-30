@@ -1,5 +1,5 @@
 'use client'
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 import { FcLike } from "react-icons/fc";
@@ -12,22 +12,9 @@ import shoulderbag5 from '@/assets/images/shoulderbag5.png';
 import shoulderbag6 from '@/assets/images/shoulderbag6.png';
 import handbag1 from '@/assets/images/handbag1.png';
 import handbag2 from '@/assets/images/handbag2.png';
-import { useState } from 'react';
-
-type Product = {
-    id: number;
-    title: string;
-    img: StaticImageData;
-    actualprize: string;
-    discprize?: string;
-    offerprize?: string;
-    colors?: string;
-};
 
 
 export default function ShopProduct() {
-    // const [wishlist, setWishlist] = useState<Product[]>([]);
-
     const productlist = [
         { id: 1, img: shoulderbag1, title: 'SHOULDER BAG', actualprize: '₹420.00', discprize: '₹400.00', offerprize: '20% OFF', colors: '3 COLORS' },
         { id: 2, img: shoulderbag2, title: 'SHOULDER BAG', actualprize: '₹290.00', discprize: '₹220.00', offerprize: '10% OFF', colors: '2 COLORS' },
