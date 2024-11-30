@@ -46,12 +46,18 @@ export default function CheckoutItems({ products }: { products: WishlistProduct[
     const [username, setUserName] = useState('');
     const [error, setError] = useState('');
     const [subtotal, setSubtotal] = useState(0);
-    const [quantities, setQuantities] = useState<Record<string, number>>(
-        products.reduce((acc, product) => {
-            acc[product.id] = 1;
-            return acc;
-        }, {} as Record<string, number>)
-    );
+    // const [quantities, setQuantities] = useState<Record<string, number>>(
+    //     products.reduce((acc, product) => {
+    //         acc[product.id] = 1;
+    //         return acc;
+    //     }, {} as Record<string, number>)
+    // );
+
+    const quantities = products.reduce((acc, product) => {
+        acc[product.id] = 1;
+        return acc;
+    }, {} as Record<string, number>);
+
 
     useEffect(() => {
         const total = products.reduce((acc, product) => {
@@ -309,7 +315,7 @@ export default function CheckoutItems({ products }: { products: WishlistProduct[
                         <p className="m-0 text-xs text-[16px]">₹144.29</p>
                         <p className="font-semibold text-lg lg:text-2xl m-0">₹1,744.29</p>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
     )
